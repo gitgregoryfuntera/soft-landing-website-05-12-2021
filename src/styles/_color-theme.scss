@@ -1,0 +1,25 @@
+$color-primary: #359756;
+$color-secondary: #e5e5e5;
+$color-white: #fff;
+$color-black: #000;
+$color-shade-gray: #4d4d4d;
+$color-gray: #555c66;
+$color-light-green: #8ae4a8;
+$color-yellow: #f1c50e;
+$color-charcoal: #333333;
+
+$theme-colors: (
+  primary: $color-primary,
+  secondary: $color-secondary,
+  white: $color-white,
+  black: $color-black,
+  gray: $color-gray,
+  light-green: $color-light-green,
+  shade-gray: $color-shade-gray,
+  yellow: $color-yellow,
+  charcoal: $color-charcoal,
+);
+
+@function theme-color($key) {
+  @return map-get($theme-colors, $key);
+}

@@ -1,0 +1,224 @@
+@import "color-theme";
+@import "component-theme";
+@import "media-queries";
+
+.purchase-detail-container {
+  & .title {
+    margin: 2rem;
+    h1 {
+      font-size: 2.75rem;
+      color: theme-color(primary);
+    }
+  }
+
+  & .description {
+    margin: 2rem;
+    p {
+      font-size: 1.25rem;
+      line-height: 2rem;
+    }
+  }
+
+  & .purchase-list {
+    margin-top: 2rem;
+    margin-left: 2rem;
+    ul {
+      list-style: none;
+      margin-top: 1rem;
+      li {
+        line-height: 2.1875rem;
+        font-size: 1rem;
+      }
+    }
+    ul li:before {
+      content: "✓";
+      margin-right: 0.5rem;
+      font-weight: bold;
+      color: theme-color(primary);
+    }
+  }
+
+  & .plan-container {
+    padding: 0.5rem;
+    @include cardTheme();
+    .starter-plan-card {
+      background-color: theme-color(primary);
+    }
+    .plan-title {
+      text-align: left;
+      h4 {
+        margin: 1rem;
+        padding-top: 1rem;
+        font-size: 1.25rem;
+        color: theme-color(white);
+        font-weight: 400;
+      }
+      h1 {
+        margin: 1rem;
+        font-size: 3.75rem;
+        color: theme-color(light-green);
+      }
+    }
+    .starter-plan-btn {
+      @include buttonTheme();
+      text-align: left;
+      margin-left: 1rem;
+      .upload-btn {
+        font-size: 1.125rem;
+        color: theme-color(primary);
+        font-weight: 700;
+        i {
+          margin: 0.5rem;
+        }
+      }
+    }
+    .plan-detail {
+      line-height: 1.5rem;
+      color: theme-color(white);
+      font-weight: 0.875rem;
+      margin: 0.5rem;
+      text-align: left;
+      padding: 0.5rem 0 2rem 0.5rem;
+    }
+
+    .starter-plan-card.yearly-monthly {
+      background-color: theme-color(white);
+      .plan-title {
+        .badge-container {
+          margin: 0.5rem;
+          @include buttonThemeRound();
+          .badge-discount {
+            background-color: theme-color(yellow);
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: theme-color(white);
+          }
+        }
+
+        h4 {
+          color: theme-color(primary);
+        }
+        h1 {
+          color: theme-color(primary);
+          small {
+            font-size: 1.5rem;
+          }
+        }
+      }
+
+      .starter-plan-btn {
+        .upload-btn {
+          font-size: 1rem;
+          color: theme-color(white);
+          background: theme-color(primary);
+        }
+      }
+
+      .plan-detail {
+        p {
+          color: theme-color(black);
+        }
+      }
+    }
+  }
+
+  @include tablet {
+    position: relative;
+    bottom: -16rem;
+    padding-bottom: 1.5rem;
+    & .purchase-description-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      .description {
+        max-width: 17.5rem;
+      }
+      .purchase-list {
+        width: 20.9375rem;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 1.25rem;
+      }
+    }
+
+    & .plan-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      .card {
+        min-width: 10.25rem;
+        width: 14rem;
+        margin: 0 0.5rem 0 1rem;
+      }
+      .card.starter-plan-card {
+        .plan-title {
+          .free {
+            margin-top: 4rem;
+          }
+        }
+        .starter-plan-btn {
+          button.button.upload-btn {
+            font-size: 0.625rem;
+          }
+        }
+      }
+    }
+    .card.starter-plan-card.yearly-monthly {
+      .plan-title {
+        .monthly {
+          margin-top: 4.2rem;
+        }
+      }
+      .starter-plan-btn {
+        button.button.upload-btn {
+          font-size: 0.625rem;
+        }
+      }
+    }
+  }
+
+  @include laptop {
+    & .purchase-description-container {
+      .description {
+        max-width: 30.5rem;
+      }
+    }
+    & .plan-container {
+      .card {
+        width: 19rem;
+      }
+      .card.starter-plan-card {
+        .starter-plan-btn {
+          button.button.upload-btn {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  @include desktop {
+    position: relative;
+    bottom: -10rem;
+    max-width: 77.5rem;
+    margin: auto;
+    & .purchase-description-container { 
+      .description {
+        max-width:  40rem;
+      }
+
+      .purchase-list {
+        width: auto;
+        gap: 5rem;
+      }
+    }
+    & .plan-container {
+      margin-top: 2rem;
+      .card {
+        width: 22rem;
+      }
+    }
+  }
+}

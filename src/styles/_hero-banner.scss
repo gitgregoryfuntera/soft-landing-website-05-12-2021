@@ -1,0 +1,62 @@
+@import "color-theme";
+@import "component-theme";
+@import "media-queries";
+
+.hero-banner-container {
+  background: theme-color(white);
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  max-width: 100%;
+  justify-content: center;
+  & .hero-title {
+    max-width: 31.25rem;
+    margin: 2rem;
+    text-align: center;
+    & .title {
+      margin: 0.5rem;
+      font-size: 3.75rem;
+      color: theme-color(primary);
+    }
+    & .sub-title {
+      margin-top: 2.0625rem;
+      font-weight: 300;
+      font-size: 1rem;
+      a {
+        text-decoration-color: theme-color(primary);
+        color: theme-color(black);
+      }
+    }
+    @include tablet {
+      text-align: left;
+    }
+  }
+  & .hero-image {
+    max-width: 31.25rem;
+    margin: 2rem;
+    img {
+      width: 100%;
+    }
+  }
+
+  & .button-container {
+    @include buttonTheme();
+    margin-top: 2.0625rem;
+    .btn-upload {
+      background-color: theme-color(primary);
+      color: theme-color(white);
+      width: 13.3125rem;
+      font-weight: 700;
+      font-size: 1rem;
+      margin: 0.2rem;
+    }
+    .btn-watch {
+      background-color: theme-color(secondary);
+      margin-top: 1.25rem;
+      width: 13.3125rem;
+      font-weight: 700;
+      font-size: 1rem;
+      margin: 0.5rem;
+    }
+  }
+}

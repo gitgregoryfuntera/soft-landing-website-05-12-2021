@@ -1,0 +1,123 @@
+@import "color-theme";
+@import "component-theme";
+@import "media-queries";
+
+.testimonial-container {
+  text-align: center;
+  background: theme-color(white);
+  & .testimonial-title-message-container {
+    padding: 1rem;
+    & .testimonial-title {
+      margin: 1.5rem 0;
+      h6 {
+        font-weight: 400;
+        font-size: 1.125rem;
+        line-height: 1.25rem;
+      }
+    }
+    & .testimonial-sub-title {
+      margin: auto;
+      h1 {
+        color: theme-color(primary);
+        margin-bottom: 1.5rem;
+        font-size: 2.75rem;
+        font-weight: 700;
+        line-height: 2.5rem;
+      }
+    }
+
+    & .testimonial-title-message {
+      font-size: 1.25rem;
+      line-height: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    & .user-testimonial-card-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1rem;
+      @include cardTheme();
+      & .card-user-testimonial {
+        padding: 1rem;
+        margin: auto;
+        background: theme-color(secondary);
+        & .card-user-avatar {
+          padding: 1rem;
+          img {
+            width: 8.3125rem;
+            height: 8.3125rem;
+            border-radius: 50%;
+            border: 4px solid theme-color(white);
+          }
+        }
+        & .card-user-message {
+          font-size: 1.0625rem;
+          color: theme-color(shade-gray);
+          .quotation-icon-container {
+            padding: 0.5rem;
+          }
+        }
+        & .card-user-name {
+          h5 {
+            color: theme-color(primary);
+            margin-top: 2.5rem;
+            font-size: 1.25rem;
+          }
+          h6 {
+            font-size: 1.125rem;
+            color: theme-color(gray);
+            font-weight: 400;
+            margin-top: 0.875rem;
+          }
+        }
+      }
+    }
+
+    & .image-from-container {
+      text-align: center;
+      width: 100%;
+      margin: 0.5rem;
+      p {
+        a {
+          color: theme-color(black);
+          text-decoration-color: theme-color(primary);
+        }
+      }
+    }
+  }
+
+  @include tablet {
+    position: relative;
+    bottom: -16.5rem;
+    & .testimonial-sub-title {
+      max-width: 40rem !important;
+    }
+    & .user-testimonial-card-container {
+      & .card-user-testimonial {
+        max-width: 12.5rem !important;
+      }
+    }
+  }
+
+  @include laptop {
+    bottom: -16.5rem;
+    & .testimonial-sub-title {
+      max-width: 76rem !important;
+    }
+    & .user-testimonial-card-container {
+      & .card-user-testimonial {
+        min-width: 199px !important;
+      }
+    }
+  }
+
+  @include desktop {
+    bottom: -8.9rem;
+    & .user-testimonial-card-container {
+      & .card-user-testimonial {
+        min-width: 14.375rem !important;
+      }
+    }
+  }
+}

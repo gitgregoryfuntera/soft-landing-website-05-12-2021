@@ -1,0 +1,24 @@
+@import "color-theme";
+@import "component-theme";
+@import "media-queries";
+
+footer {
+    background-color: theme-color(charcoal);
+    .footer-message{
+        p {
+            a {
+                color: theme-color(primary);
+            }
+        }
+        padding: 3rem;
+        text-align: center;
+        font-weight: 400;
+        font-size: 1rem;
+        color: theme-color(white);
+    }
+
+  @include tablet() {
+    position: relative;
+    bottom: -18rem;
+  }
+}

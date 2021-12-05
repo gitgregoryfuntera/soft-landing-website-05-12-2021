@@ -1,0 +1,215 @@
+@import "color-theme";
+@import "component-theme";
+@import "media-queries";
+
+.site-message-container {
+  position: relative;
+  z-index: 10;
+  background: theme-color(secondary);
+  & .message-intro {
+    padding: 1rem;
+    .title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin: 0.5rem;
+      color: theme-color(primary);
+    }
+    .sub-title {
+      font-weight: 300;
+      margin: 0.5rem;
+      font-size: 1.5rem;
+    }
+    @include buttonTheme();
+    .btn-read-more {
+      background-color: theme-color(primary);
+      font-weight: 700;
+      font-size: 1rem;
+      margin: 0.5rem;
+      color: theme-color(white);
+    }
+  }
+
+  & .message-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 37.5rem;
+    margin: auto;
+    @include cardTheme();
+    & .card {
+      padding-bottom: 1rem;
+      margin-top: 1rem;
+      .header {
+        padding: 1rem;
+        .header-button-container {
+          @include buttonThemeRound();
+          .btn-card {
+            background: theme-color(primary);
+            color: theme-color(white);
+            margin: 1rem auto;
+            text-transform: uppercase;
+            font-weight: 500;
+          }
+        }
+      }
+
+      .title {
+        font-size: 1.5rem;
+        color: theme-color(primary);
+        h5 {
+          font-weight: 400;
+        }
+      }
+
+      .content {
+        p {
+          font-size: 1rem;
+          margin: 1rem;
+          font-style: italic;
+          color: theme-color(gray);
+        }
+      }
+
+      .actions {
+        a {
+          text-transform: uppercase;
+          color: theme-color(black);
+          text-decoration-color: theme-color(primary);
+        }
+      }
+    }
+  }
+
+  & .work-message-container {
+    margin-top: 1rem;
+    position: relative;
+    .main-backdrop {
+      text-align: center;
+      padding: 2rem 0;
+      .card-backdrop {
+        background: theme-color(primary);
+        max-width: 70%;
+        min-height: 48rem;
+        z-index: -1;
+        top: 5%;
+        position: absolute;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+      }
+      .team-picture-container {
+        min-width: 260px;
+        img {
+          width: 100%;
+          max-width: 37.6875rem;
+        }
+        margin: auto 1rem;
+      }
+      .circle-shape {
+        background: theme-color(light-green);
+        width: 9.375rem;
+        height: 9.375rem;
+        background: #8ae4a8;
+        border-radius: 5rem;
+        position: relative;
+        bottom: -4.375rem;
+        left: 0.625rem;
+      }
+
+      @include cardTheme();
+      .card-work-message {
+        margin: auto 1rem;
+        .title {
+          margin: 0.5rem;
+          padding: 0.5rem;
+          text-align: left;
+          font-size: 1.5rem;
+          color: theme-color(primary);
+        }
+        .content p {
+          font-size: 1rem;
+          margin: 0.5rem;
+          padding: 0.5rem;
+          text-align: left;
+          a {
+            text-decoration-color: theme-color(primary);
+            color: theme-color(black);
+          }
+        }
+        .actions {
+          text-align: left;
+          margin: 1em;
+          padding-bottom: 1em;
+          @include buttonTheme();
+          .btn-learn-more {
+            font-weight: 700;
+            font-size: 18px;
+            background-color: theme-color(primary);
+            color: theme-color(white);
+          }
+        }
+      }
+    }
+  }
+
+  @include tablet {
+    & .message-intro {
+      max-width: 500px;
+      margin: auto;
+    }
+    & .card {
+      width: 240px;
+    }
+
+    & .card-work-message {
+      width: 496px;
+      position: absolute;
+      left: 30%;
+      bottom: -30%;
+    }
+
+    & .card-backdrop {
+      width: 35%;
+      height: 55rem;
+    }
+  }
+
+  @include laptop {
+    & .card-work-message {
+      left: 40%;
+    }
+
+    & .circle-shape {
+      left: 9.375rem !important;
+      bottom: -10.3125rem !important;
+    }
+  }
+
+  @include desktop {
+    & .site-message-flex-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      max-width: 1135px;
+      margin: auto;
+    }
+    & .work-message-container {
+      margin: auto;
+    }
+    & img {
+      max-width: 49rem !important;
+    }
+
+    & .card-work-message {
+      width: 28.5rem;
+      left: 55%;
+      bottom: -15%;
+    }
+
+    & .circle-shape {
+      left: -5.625rem !important;
+      bottom: -8.3125rem !important;
+    }
+  }
+}

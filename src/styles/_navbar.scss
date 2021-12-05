@@ -1,0 +1,42 @@
+@import "media-queries";
+@import "component-theme";
+
+.nav-container {
+  background: theme-color(white);
+  display: grid;
+  justify-items: center;
+  grid-gap: 0.5rem;
+
+  & .logo-container,
+  .social-links-container,
+  .nav-menu-container {
+    margin: 0.5rem;
+  }
+
+  & .logo-container {
+    margin-left: 2rem;
+  }
+
+  & .social-links-container span .fb-circle {
+    color: #3b5998;
+  }
+
+  & .social-links-container span .twitter-circle {
+    color: #55acee;
+  }
+
+  & .social-links-container span .instagram-circle {
+    color: #c536a4;
+  }
+
+  & .nav-menu-container {
+    .nav-menu {
+      cursor: pointer;
+    }
+  }
+
+  @include tablet {
+    grid-template-columns: auto 3rem 10rem;
+    justify-items: start;
+  }
+}

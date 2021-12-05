@@ -1,0 +1,138 @@
+@import "color-theme";
+@import "component-theme";
+@import "media-queries";
+
+.contact-info-container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  .floating-backdrop {
+    position: absolute;
+    width: 100%;
+    height: 11.25rem;
+    background: theme-color(primary);
+    z-index: 1;
+    margin-top: 8%;
+  }
+  .contact-info-card-container {
+    position: relative;
+    z-index: 2;
+    max-width: 85%;
+    margin: auto;
+    @include cardTheme();
+    .contact-info-card {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      text-align: left;
+      .contact-info-labels-container {
+        h3 {
+          padding: 1rem;
+          font-size: 1.5rem;
+          font-weight: 700;
+        }
+        .contact-info {
+          padding: 1rem;
+          font-size: 1rem;
+          display: block;
+          .icon-container {
+            i {
+              color: theme-color(primary);
+              font-size: 1.25rem;
+              margin-right: 0.3rem;
+            }
+          }
+        }
+        .media-icon-container {
+          padding-bottom: 1rem;
+          margin-top: 1rem;
+          .icon-container {
+            margin-left: 1rem;
+            i {
+              color: theme-color(primary);
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+
+      .input-container {
+        padding-bottom: 0.5rem;
+        margin: auto;
+        @include textFieldTheme();
+        input,
+        textarea {
+          width: 80%;
+          margin-top: 1rem;
+          margin-left: 1rem;
+        }
+        @include buttonTheme();
+        .btn-submit {
+          background: theme-color(primary);
+          color: theme-color(white);
+          width: 84%;
+          text-transform: uppercase;
+          font-weight: 700;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+
+  @include tablet {
+    position: relative;
+    bottom: -16.5rem;
+    .contact-info-labels-container {
+      width: 50%;
+      margin-left: 1rem;
+    }
+    .input-container {
+      width: 45%;
+    }
+  }
+
+  @include laptop {
+    .contact-info-card-container {
+      width: 53rem;
+      .contact-info-labels-container {
+        h3 {
+          font-size: 2rem !important;
+        }
+
+        .contact-info {
+          font-size: 1.5rem !important;
+          .icon-container {
+            i {
+              font-size: 2.25rem !important;
+            }
+          }
+        }
+
+        .media-icon-container {
+          .icon-container {
+            i {
+              font-size: 3rem !important;
+            }
+          }
+        }
+      }
+
+      .input-container {
+        padding-top: 3rem;
+        input,
+        textarea {
+          font-size: 1.3rem !important;
+        }
+      }
+    }
+  }
+
+  @include desktop {
+    .floating-backdrop {
+      height: 12.5rem;
+      margin-top: 5%;
+    }
+    .contact-info-card-container {
+      width: 70rem;
+    }
+  }
+}

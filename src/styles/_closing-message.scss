@@ -1,0 +1,114 @@
+@import "color-theme";
+@import "component-theme";
+@import "media-queries";
+
+.closing-message-container {
+  background: theme-color(white);
+  padding-bottom: 1rem;
+  & .closing-message-image-container {
+    padding-top: 1rem;
+    .backdrop {
+      text-align: center;
+      img {
+        width: 65%;
+        padding: 1rem;
+        border-left: 2.1875rem solid theme-color(primary);
+        border-right: 2.1875rem solid theme-color(primary);
+      }
+    }
+  }
+
+  & .closing-message-card-container {
+    margin-top: 2rem;
+    @include cardTheme();
+    .closing-message-card {
+      text-align: left;
+      margin: auto;
+      max-width: 65%;
+      background: theme-color(secondary);
+      padding-left: 1.875rem;
+      padding-right: 1.875rem;
+      h1 {
+        padding-top: 1.875rem;
+        color: theme-color(primary);
+        font-size: 2.25rem;
+      }
+      .link-container {
+        margin-top: 2rem;
+        p {
+          a {
+            color: theme-color(black);
+            text-decoration-color: theme-color(primary);
+          }
+        }
+      }
+      .button-container {
+        margin-top: 2rem;
+        padding-bottom: 2rem;
+        @include buttonTheme();
+        .closing-message-button {
+          background: theme-color(primary);
+          color: theme-color(white);
+          font-size: 1rem;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+  @include tablet {
+    position: relative;
+    bottom: -16rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    & .closing-message-image-container {
+      width: 50%;
+      margin: auto;
+      position: relative;
+      left: 3rem;
+    }
+    & .closing-message-card-container {
+      width: 48%;
+    }
+  }
+
+  @include laptop {
+    padding-bottom: 5rem;
+    & .closing-message-image-container {
+      width: 55%;
+      margin: 0;
+      left: 3rem;
+      top: 3rem;
+    }
+    & .closing-message-card-container {
+      width: 45%;
+      height: 22.5rem;
+      right: 3.2rem;
+      position: relative;
+      .card.closing-message-card {
+        h1 {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+
+  @include desktop {
+    justify-content: center;
+    padding-bottom: 10rem;
+    .closing-message-image-container {
+      width: 35%;
+    }
+    .closing-message-card-container {
+      width: 38%;
+      .card.closing-message-card {
+        margin-right: 0;
+        margin-left: 5rem;
+        h1 {
+          font-size: 3.5rem;
+          padding-top: 3rem;
+        }
+      }
+    }
+  }
+}

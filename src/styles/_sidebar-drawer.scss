@@ -1,0 +1,29 @@
+#sidebar {
+  z-index: 99;
+  position: fixed;
+  width: 17.5rem;
+  height: 100vh;
+  background: #000;
+  left: -17.5rem;
+  opacity: 0.9;
+  transition: 0.2s;
+  & ul {
+    color: #fff;
+    text-decoration: none;
+  }
+  &.active {
+    left: 0;
+  }
+
+  & ul li .close-drawer-container {
+    margin: 1.5rem;
+    text-align: right;
+  }
+
+  & ul li {
+    display: block;
+    margin: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+  }
+}
